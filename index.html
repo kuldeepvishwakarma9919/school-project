@@ -7,104 +7,475 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="custom.css">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/custom.css">
+
+   <style>
+    li{
+        list-style: none;
+    }
+    .custom-hover-dropdowns .dropdown-menu-custom {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: white;
+  padding: 10px 0;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: none;
+  z-index: 1000;
+  transition: all 0.2s ease;
+}
+
+.custom-hover-dropdowns .dropdown-menu-custom .dropdown-item {
+  padding: 8px 15px;
+  font-size: 0.95rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.custom-hover-dropdowns .dropdown-menu-custom .dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #FD7E14;
+}
+
+/* Show on hover */
+.custom-hover-dropdowns .dropdown:hover .dropdown-menu-custom {
+  display: block;
+}
+.vle-animate-btn {
+  transition: all 0.4s ease;
+  animation: pulseEffect 0.8s ease-in-out infinite;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+
+
+.vle-animate-btn {
+  transition: all 0.4s ease;
+}
+
+/* Animation Class (JS se add/remove hota hai) */
+.vle-animate-btn.pulse {
+  animation: pulseEffect 0.6s ease-in-out;
+}
+
+@keyframes pulseEffect {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(253, 126, 20, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+}
+
+
+
+.my-custom-btn {
+    background-color: #FD7E14; 
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.my-custom-btn {
+    background-color: #FD7E14; /* Original button color for desktop */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Custom hover dropdowns (desktop) */
+.custom-hover-dropdowns .dropdown-menu-custom {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #f9f9f9;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-hover-dropdowns .dropdown-menu-custom a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.custom-hover-dropdowns .dropdown-menu-custom a:hover {
+    background-color: #ddd;
+}
+
+.custom-hover-dropdowns .nav-item.dropdown:hover .dropdown-menu-custom {
+    display: block;
+}
+
+/* Style for the "All Olympiads" dropdown button */
+.dropMainClass {
+    background-color: #007bff; /* Example color, adjust if needed */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.dropMainClass small {
+    display: block;
+    font-size: 0.75em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* Custom styles for your mobile menu behavior */
+/* Ensure you have Font Awesome and Bootstrap CSS linked */
+
+/* --- Mobile Specific Styles --- */
+@media (max-width: 991.98px) { /* Applies to screens smaller than large (lg) breakpoint */
+
+    /* Make the navbar-collapse a flex container to push content to top and bottom */
+    .navbar-collapse {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack items vertically */
+        position: fixed;
+        top: 0;
+        left: -100%; /* Start off-screen to the LEFT */
+        bottom: 0;
+        width: 75%; /* Adjust as needed */
+        background-color: #002244; /* Dark blue background from image */
+        z-index: 1050; /* Above other content */
+        transition: left 0.3s ease-in-out; /* Smooth transition for LEFT slide */
+        overflow-y: auto; /* Enable scrolling if content overflows */
+        padding: 0; /* Remove padding here, add to individual items */
+    }
+
+    .navbar-collapse.show {
+        left: 0; /* Slide in from the LEFT */
+        box-shadow: 5px 0px 15px rgba(0,0,0,0.2); /* Shadow on the right side */
+    }
+
+    /* Adjust navbar brand in mobile to accommodate toggler and All Olympiads */
+    .navbar-brand {
+        margin-right: auto; /* Push brand to the left on mobile */
+    }
+
+    /* Style for the main navigation links and the Login/Register buttons acting as toggles */
+    .navbar-nav {
+        width: 100%; /* Ensure the whole ul takes full width */
+        padding-top: 1rem; /* Padding from the top of the menu */
+        flex-grow: 1; /* Allow the main ul to grow and push buttons down if needed */
+    }
+
+    .navbar-nav .nav-item .nav-link,
+    .navbar-nav .nav-item .my-mobile-menu-btn { /* Apply to nav links AND custom buttons */
+        color: white !important; /* White text for contrast */
+        padding: 15px 20px; /* Adjust padding for a click-friendly area */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+        border-radius: 0 !important; /* Remove rounded corners */
+        text-align: left; /* Align text to the left */
+        width: 100%; /* Ensure full width */
+        background-color: transparent !important; /* Ensure buttons have menu background by default */
+        border-top: none; /* No top border */
+    }
+
+    /* Remove the border from the very first item to avoid a double border at the top of the menu */
+    .navbar-nav .nav-item:first-child .nav-link {
+        border-top: none !important;
+    }
+
+
+    .navbar-nav .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.1); /* Highlight active link */
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .my-mobile-menu-btn:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Hover effect for links and buttons */
+    }
+
+    /* Style for the dropdown toggle arrow for Winners and Login/Register buttons */
+    .navbar-nav .nav-item.dropdown .nav-link.dropdown-toggle::after,
+    .navbar-nav .nav-item.dropdown .my-mobile-menu-btn.dropdown-toggle::after {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* Style for ALL dropdown menus themselves in mobile (sub-menus like Winners, Login, Register) */
+    .navbar-nav .dropdown-menu,
+    .navbar-nav .dropdown-menu-custom-mobile {
+        position: static !important; /* Make dropdowns flow naturally */
+        float: none !important;
+        width: 100% !important; /* Take full width */
+        margin-top: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: transparent !important; /* No background */
+        padding: 0;
+    }
+
+    .navbar-nav .dropdown-menu li a.dropdown-item,
+    .navbar-nav .dropdown-menu-custom-mobile li a.dropdown-item {
+        color: rgba(255, 255, 255, 0.7) !important; /* Lighter text for submenu items */
+        padding-left: 40px; /* Indent submenu items */
+        background-color: rgba(0, 0, 0, 0.1); /* Slightly darker background for submenu */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Lighter separator */
+        border-radius: 0 !important; /* No rounded corners */
+    }
+
+    .navbar-nav .dropdown-menu li a.dropdown-item:hover,
+    .navbar-nav .dropdown-menu-custom-mobile li a.dropdown-item:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hide desktop login/register buttons on mobile */
+    .custom-hover-dropdowns {
+        display: none !important;
+    }
+
+    /* Styling for the Login/Register buttons themselves */
+    .my-mobile-menu-btn {
+        background-color: #FD7E14 !important; /* Force button color */
+        /* Other properties inherited from .nav-link styling above */
+    }
+
+    .my-mobile-menu-btn:hover {
+        background-color: #e06d0b !important; /* Darker hover effect */
+    }
+
+    /* Modern "All Olympiads" button styling for mobile */
+    .modern-drop-button {
+        background-color: #007bff; /* A prominent blue */
+        color: white;
+        border: 1px solid #007bff; /* Solid border */
+        padding: 6px 12px; /* Slightly less padding than full menu items */
+        border-radius: 5px; /* Subtle rounded corners */
+        text-align: center; /* Center text */
+        line-height: 1.2;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Soft shadow for modern look */
+        transition: all 0.2s ease-in-out;
+    }
+
+    .modern-drop-button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        border-color: #0056b3;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .modern-drop-button small {
+        display: block; /* Ensure small text goes to a new line */
+        font-size: 0.75em; /* Make the small text smaller */
+        color: rgba(255, 255, 255, 0.8); /* Lighter color for small text */
+    }
+}
+
+
+/* --- General Styles (apply to both mobile and desktop if not overridden) --- */
+
+.my-custom-btn {
+    background-color: #FD7E14; /* Original button color for desktop */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.custom-hover-dropdowns .dropdown-menu-custom a:hover {
+    background-color: #ddd;
+}
+
+.custom-hover-dropdowns .nav-item.dropdown:hover .dropdown-menu-custom {
+    display: block;
+}
+
+/* Style for the "All Olympiads" dropdown button (desktop version) */
+.dropMainClass {
+    background-color: #007bff; /* Example color, adjust if needed */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.dropMainClass small {
+    display: block;
+    font-size: 0.75em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+   </style>
 </head>
 <body>
 
-    <div class="top-bar bg-light py-1 d-none d-md-block">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-start">
-                    <a href="mailto:olympiad@cscacademy.org" class="text-decoration-none text-dark"><i class="fas fa-envelope me-2"></i>olympiad@cscacademy.org</a>
+<div class="top-bar bg-light py-2 d-block d-md-none">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center">
+                <a href="mailto:olympiad@cscacademy.org" class="text-decoration-none text-dark"><i class="fas fa-envelope me-2"></i>olympiad@cscacademy.org</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="top-bar bg-light py-1 d-none d-md-block">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-start">
+                <a href="mailto:olympiad@cscacademy.org" class="text-decoration-none text-dark"><i class="fas fa-envelope me-2"></i>olympiad@cscacademy.org</a>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-dark me-3"><i class="fab fa-whatsapp"></i></a>
+                <button class="btn btn-sm me-2" style="background-color: #FD7E14;">Date Sheet</button>
+                <button class="btn btn-sm vle-animate-btn" style="background-color: #FD7E14; color: white;">
+                VLE Login
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-4">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <span>Logo</span>
+        </a>
+
+        <div class="d-flex d-lg-none align-items-center ms-auto"> <li class="nav-item dropdown list-unstyled me-2">
+                <a class="btn btn-sm dropdown-toggle modern-drop-button" href="#" id="dropdownAllOlympiadsMobile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    All Olympiads<br><small>Syllabus, Sample Papers</small>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownAllOlympiadsMobile">
+                    <li><a class="dropdown-item" href="class.html">Class 1</a></li>
+                    <li><a class="dropdown-item" href="class.html">Class 2</a></li>
+                    <li><a class="dropdown-item" href="class.html">Class 3</a></li>
+                    <li><a class="dropdown-item" href="class.html">Class 4</a></li>
+                    <li><a class="dropdown-item" href="class.html">Class 5</a></li>
+                    <li><a class="dropdown-item" href="class.html">Class 6</a></li>
+                    <li><a class="dropdown-item" href="class.html">Class 7</a></li>
+                    <li><a class="dropdown-item" href="class.html">Class 8</a></li>
+                    <li><a class="dropdown-item" href="class.html">Class 9</a></li>
+                    <li><a class="dropdown-item" href="class.html">Class 10</a></li>
+                    <li><a class="dropdown-item" href="class.html">Class 11</a></li>
+                    <li><a class="dropdown-item" href="class.html">Class 12</a></li>
+                </ul>
+            </li>
+            <button class="navbar-toggler shadow-none border-0 outline-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item dropdown d-none d-lg-block me-2">
+                    <a class="btn btn-sm dropdown-toggle dropMainClass" href="#" id="dropdownAllOlympiads" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        All Olympiads<br><small>Syllabus, Sample Papers</small>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownAllOlympiads">
+                        <li><a class="dropdown-item" href="class.html">Class 1</a></li>
+                        <li><a class="dropdown-item" href="class.html">Class 2</a></li>
+                        <li><a class="dropdown-item" href="class.html">Class 3</a></li>
+                        <li><a class="dropdown-item" href="class.html">Class 4</a></li>
+                        <li><a class="dropdown-item" href="class.html">Class 5</a></li>
+                        <li><a class="dropdown-item" href="class.html">Class 6</a></li>
+                        <li><a class="dropdown-item" href="class.html">Class 7</a></li>
+                        <li><a class="dropdown-item" href="class.html">Class 8</a></li>
+                        <li><a class="dropdown-item" href="class.html">Class 9</a></li>
+                        <li><a class="dropdown-item" href="class.html">Class 10</a></li>
+                        <li><a class="dropdown-item" href="class.html">Class 11</a></li>
+                        <li><a class="dropdown-item" href="class.html">Class 12</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownWinners" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Winners
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownWinners">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Gallery</a>
+                </li>
+
+                <li class="nav-item dropdown d-lg-none mt-3">
+                    <button class="btn my-mobile-menu-btn dropdown-toggle w-100 text-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Login
+                    </button>
+                    <ul class="dropdown-menu-custom-mobile w-100">
+                        <li><a class="dropdown-item" href="register.html">Student Login</a></li>
+                        <li><a class="dropdown-item" href="register.html">School Login</a></li>
+                        <li><a class="dropdown-item" href="register.html">VLE Login</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown d-lg-none mt-2">
+                    <button class="btn my-mobile-menu-btn dropdown-toggle w-100 text-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Register
+                    </button>
+                    <ul class="dropdown-menu-custom-mobile w-100">
+                        <li><a class="dropdown-item" href="register.html">Register Student</a></li>
+                        <li><a class="dropdown-item" href="register.html">Register Portal</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="d-none d-lg-flex align-items-center custom-hover-dropdowns">
+                <div class="nav-item dropdown me-2 position-relative">
+                    <button class="btn my-custom-btn" type="button">
+                        Login
+                    </button>
+                    <ul class="dropdown-menu-custom">
+                        <li><a class="dropdown-item" href="register.html">Student Login</a></li>
+                        <li><a class="dropdown-item" href="register.html">School Login</a></li>
+                        <li><a class="dropdown-item" href="register.html">VLE Login</a></li>
+                    </ul>
                 </div>
-                <div class="col-md-6 text-end">
-                    <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-dark me-3"><i class="fab fa-whatsapp"></i></a>
-                    <button class="btn btn-sm btn-info me-2">Date Sheet</button>
-                    <button class="btn btn-sm btn-primary">VLE Login</button>
+
+                <div class="nav-item dropdown position-relative">
+                    <button class="btn my-custom-btn" type="button">
+                        Register
+                    </button>
+                    <ul class="dropdown-menu-custom">
+                        <li><a class="dropdown-item" href="register.html">Register Student</a></li>
+                        <li><a class="dropdown-item" href="register.html">Register Portal</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-4">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <span>Logo</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-
-                     <li class="nav-item dropdown d-none d-lg-block me-2">
-                        <a class="btn  btn-sm dropdown-toggle dropMainClass" href="#" id="dropdownAllOlympiads" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            All Olympiads<br><small>Syllabus, Sample Papers</small>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownAllOlympiads">
-                            <li><a class="dropdown-item" href="class.html">Class 1</a></li>
-                            <li><a class="dropdown-item" href="class.html">Class 2</a></li>
-                            <li><a class="dropdown-item" href="class.html">Class 3</a></li>
-                            <li><a class="dropdown-item" href="class.html">Class 4</a></li>
-                            <li><a class="dropdown-item" href="class.html">Class 5</a></li>
-                            <li><a class="dropdown-item" href="class.html">Class 6</a></li>
-                            <li><a class="dropdown-item" href="class.html">Class 7</a></li>
-                            <li><a class="dropdown-item" href="class.html">Class 8</a></li>
-                            <li><a class="dropdown-item" href="class.html">Class 9</a></li>
-                            <li><a class="dropdown-item" href="class.html">Class 10</a></li>
-                            <li><a class="dropdown-item" href="class.html">Class 11</a></li>
-                            <li><a class="dropdown-item" href="class.html">Class 12</a></li>
-                        </ul>
-                    </li>
-
-
-
-                    <li class="nav-item">
-                        <a class="nav-link active  ps-5 py-2 rounded" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownWinners" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Winners
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownWinners">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Gallery</a>
-                    </li>
-                </ul>
-                <div class="d-flex align-items-center">
-                    <div class="nav-item dropdown me-2">
-                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownLogin" data-bs-toggle="dropdown" aria-expanded="false">
-                            Login
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownLogin">
-                            <li><a class="dropdown-item" href="register.html">Student Login</a></li>
-                            <li><a class="dropdown-item" href="register.html">School Login</a></li>
-                            <li><a class="dropdown-item" href="register.html">VLE Login</a></li>
-                        </ul>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownRegister" data-bs-toggle="dropdown" aria-expanded="false">
-                            Register
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownRegister">
-                            <li><a class="dropdown-item" href="register.html">Register Student </a></li>
-                            <li><a class="dropdown-item" href="register.html">Register Portal</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+</nav>
 
     <section class="hero-section py-5 mt-3">
         <div class="container position-relative">
@@ -114,16 +485,10 @@
                     <p class="lead mb-4 text-shadow-green">Join Lakhs of students from <br>Classes 3<sup>rd</sup>-12<sup>th</sup> taking the CSC Olympiad</p>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block text-end position-relative">
-                    <img src="1.png" alt="Girl studying" class="img-fluid hero-image">
+                    <img src="img/1.png" alt="Girl studying" class="img-fluid hero-image">
                 </div>
             </div>
-            <!-- <div class="overlay-box bg-white p-2 rounded shadow-lg d-flex align-items-center">
-                <span class="text-primary fw-bold me-2">TL</span>
-                <span class="me-3">Default Task</span>
-                <span class="badge bg-success me-2">03h 31m</span>
-                <button class="btn btn-sm btn-warning text-dark me-2">Working</button>
-                <button class="btn btn-sm btn-link text-decoration-none text-muted">Hide</button>
-            </div> -->
+            
         </div>
     </section>
 
@@ -337,7 +702,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 col-10">
                     <div class="winner-card">
                         <div class="rank-badge">1 RANK</div>
-                        <img src="1.png" alt="Aditi Kumari">
+                        <img src="img/1.png" alt="Aditi Kumari">
                         <h5 class="mt-auto">Aditi Kumari</h5>
                         <p>Cyber Security Olympiad</p>
                     </div>
@@ -346,7 +711,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 col-10">
                     <div class="winner-card">
                         <div class="rank-badge">1 RANK</div>
-                        <img src="1.png" alt="Aavya Singh">
+                        <img src="img/1.png" alt="Aavya Singh">
                         <h5 class="mt-auto">Aavya Singh</h5>
                         <p>Chemistry Olympiad</p>
                     </div>
@@ -355,7 +720,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 col-10">
                     <div class="winner-card">
                         <div class="rank-badge">2 RANK</div>
-                        <img src="1.png" alt="Reyansh Raj">
+                        <img src="img/1.png" alt="Reyansh Raj">
                         <h5 class="mt-auto">Reyansh Raj</h5>
                         <p>Hindi Olympiad</p>
                     </div>
@@ -364,7 +729,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 col-10">
                     <div class="winner-card">
                         <div class="rank-badge">3 RANK</div>
-                        <img src="1.png" alt="Sairaj Vishvambar Wankhede">
+                        <img src="img/1.png" alt="Sairaj Vishvambar Wankhede">
                         <h5 class="mt-auto">Sairaj Vishvambar Wankhede</h5>
                         <p>Mathematics Olympiad</p>
                     </div>
@@ -468,7 +833,7 @@
                     and more are coming soon...
                 </div>
             </div>
-            <div class="illustration d-none d-md-block"> <img src="1.png" alt="Languages Illustration">
+            <div class="illustration d-none d-md-block"> <img src="img/1.png" alt="Languages Illustration">
             </div>
         </div>
     </section>
@@ -538,7 +903,7 @@
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="blog-card">
-                        <img src="1.png" alt="Place Value, Carrying and Borrowing">
+                        <img src="img/1.png" alt="Place Value, Carrying and Borrowing">
                         <div class="card-body">
                             <h5>Place Value, Carrying and Borrowing: an Approach for Class 1 and 2</h5>
                             <p>We will understand the basic concepts of Place Value, Carrying and Borrowing.</p>
@@ -548,7 +913,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="blog-card">
-                        <img src="1.png" alt="On The Brain">
+                        <img src="img/1.png" alt="On The Brain">
                         <div class="card-body">
                             <h5>On The Brain</h5>
                             <p>Extracts from an article by Marian Diamond The 1990s have been declared the Dec</p>
@@ -558,7 +923,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="blog-card">
-                        <img src="1.png" alt="Effect of Mindset on Learning">
+                        <img src="img/1.png" alt="Effect of Mindset on Learning">
                         <div class="card-body">
                             <h5>Excerpts from an article by Carol Dweck on the effect of mindset on learning</h5>
                             <p>Our society worships talent, and many people assume that possessing superior i</p>
@@ -606,7 +971,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Copyright © 2025 | All rights reserved by School</p>
+                <p>Copyright © 2025 | All rights reserved by School Project</p>
             </div>
         </div>
     </footer>
@@ -615,3 +980,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+<script>
+  const vleBtn = document.querySelector('.vle-animate-btn');
+
+  setInterval(() => {
+    vleBtn.classList.add('pulse');
+    setTimeout(() => {
+      vleBtn.classList.remove('pulse');
+    }, 600); 
+  }, 5000); 
+</script>
+
+
