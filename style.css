@@ -13,7 +13,6 @@ body {
     padding: 4px;
 }
 .navbar .nav-link.active {
-    /* color: #0d6efd !important;  */
     border-color: #FD7E14;
 }
 
@@ -723,7 +722,7 @@ body {
             flex-grow: 1; 
         }
         .blog-card .btn-read-more {
-            background-color: #0d6efd;
+            background-color: #FD7E14;
             color: white;
             border: none;
             padding: 8px 20px;
@@ -733,7 +732,7 @@ body {
             transition: background-color 0.3s ease;
         }
         .blog-card .btn-read-more:hover {
-            background-color: #0a58ca;
+            background-color: #FD7E14;
             color: white;
         }
         @media (max-width: 767.98px) {
@@ -824,3 +823,27 @@ body {
                 margin-right: 5px;
             }
         }
+
+
+        @media (max-width: 767.98px) {
+    .footer-section .col-md-3 {
+        margin-bottom: 30px;
+        text-align: center; 
+    }
+
+    @media (max-width: 767.98px) {
+    .footer-section .col-md-3 {
+        margin-bottom: 30px;
+        text-align: left;
+    }
+    .footer-section h5::after {
+        left: 0; 
+        transform: none;
+    }
+    .footer-section .contact-info p {
+        justify-content: flex-start; 
+    }
+    .footer-section .contact-info i {
+        margin-right: 10px;
+    }
+}
