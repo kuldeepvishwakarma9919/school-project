@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSC Olympiad - Recreated</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+    <div class="top-bar bg-light py-1 d-none d-md-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-start">
+                    <a href="mailto:olympiad@cscacademy.org" class="text-decoration-none text-dark"><i class="fas fa-envelope me-2"></i>olympiad@cscacademy.org</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-dark me-3"><i class="fab fa-whatsapp"></i></a>
+                    <button class="btn btn-sm btn-info me-2">Date Sheet</button>
+                    <button class="btn btn-sm btn-primary">VLE Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-4">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <span>Logo</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+
+                     <li class="nav-item dropdown d-none d-lg-block me-2">
+                        <a class="btn  btn-sm dropdown-toggle dropMainClass" href="#" id="dropdownAllOlympiads" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            All Olympiads<br><small>Syllabus, Sample Papers</small>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownAllOlympiads">
+                            <li><a class="dropdown-item" href="class.html">Class 1</a></li>
+                            <li><a class="dropdown-item" href="class.html">Class 2</a></li>
+                            <li><a class="dropdown-item" href="class.html">Class 3</a></li>
+                            <li><a class="dropdown-item" href="class.html">Class 4</a></li>
+                            <li><a class="dropdown-item" href="class.html">Class 5</a></li>
+                            <li><a class="dropdown-item" href="class.html">Class 6</a></li>
+                            <li><a class="dropdown-item" href="class.html">Class 7</a></li>
+                            <li><a class="dropdown-item" href="class.html">Class 8</a></li>
+                            <li><a class="dropdown-item" href="class.html">Class 9</a></li>
+                            <li><a class="dropdown-item" href="class.html">Class 10</a></li>
+                            <li><a class="dropdown-item" href="class.html">Class 11</a></li>
+                            <li><a class="dropdown-item" href="class.html">Class 12</a></li>
+                        </ul>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link active  ps-5 py-2 rounded" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownWinners" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Winners
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownWinners">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gallery</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <div class="nav-item dropdown me-2">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownLogin" data-bs-toggle="dropdown" aria-expanded="false">
+                            Login
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownLogin">
+                            <li><a class="dropdown-item" href="register.html">Student Login</a></li>
+                            <li><a class="dropdown-item" href="register.html">School Login</a></li>
+                            <li><a class="dropdown-item" href="register.html">VLE Login</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownRegister" data-bs-toggle="dropdown" aria-expanded="false">
+                            Register
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownRegister">
+                            <li><a class="dropdown-item" href="register.html">Register Student </a></li>
+                            <li><a class="dropdown-item" href="register.html">Register Portal</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section py-5 mt-3">
+        <div class="container position-relative">
+            <div class="row align-items-center ">
+                <div class="col-lg-7 text-white text-center text-lg-start">
+                    <h1 class="display-3 fw-bold mb-3 text-shadow-green">Where <br><span class="hero-curiosity-text">Curiosity</span> Meets <br><span class="hero-challenge-text">Challenge</span></h1>
+                    <p class="lead mb-4 text-shadow-green">Join Lakhs of students from <br>Classes 3<sup>rd</sup>-12<sup>th</sup> taking the CSC Olympiad</p>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block text-end position-relative">
+                    <img src="img/1.png" alt="Girl studying" class="img-fluid hero-image">
+                </div>
+            </div>
+            <!-- <div class="overlay-box bg-white p-2 rounded shadow-lg d-flex align-items-center">
+                <span class="text-primary fw-bold me-2">TL</span>
+                <span class="me-3">Default Task</span>
+                <span class="badge bg-success me-2">03h 31m</span>
+                <button class="btn btn-sm btn-warning text-dark me-2">Working</button>
+                <button class="btn btn-sm btn-link text-decoration-none text-muted">Hide</button>
+            </div> -->
+        </div>
+    </section>
+
+    <section class="lower-sections py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 p-3">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">NEP 2020 & NCF 2023 Mapped</h5>
+                            <p class="card-text text-muted">Content and assessments are aligned with</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 p-3">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Practice-Driven Learning</h5>
+                            <p class="card-text text-muted">Students get online practice with chapter-</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 p-3">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Focus on Digital Literacy</h5>
+                            <p class="card-text text-muted">Through tech-enabled assessments and</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-5 bg-white">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold mb-3">CSC Academy <span class="text-orange">Olympiad</span></h2>
+            <p class="lead text-muted mx-auto" style="max-width: 800px;">
+                The CSC Olympiad is <span class="fw-bold">grade-flexible</span> and designed to identify and nurture student potential. Open to
+                learners from <span class="fw-bold">Classes 3 to 12</span>, it focuses on assessing core concepts and fundamental competencies across
+                key subjects.
+            </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-3 col-sm-6">
+                <div class="class-card bg-light-green p-3 rounded shadow-sm d-flex justify-content-between align-items-start">
+                    <div>
+                        <h5 class="fw-bold mb-2">Class 3<sup>rd</sup></h5>
+                        <ul class="list-unstyled small mb-0">
+                            <li>1. English 2. Hindi</li>
+                            <li>3. Mathematics 4. Science</li>
+                            <li><a href="#" class="text-decoration-none text-danger fw-bold">and more...</a></li>
+                        </ul>
+                    </div>
+                    <div class="class-number-badge bg-orange rounded p-2 text-white fw-bold">
+                        03 <br><span class="badge-small-text">Syll.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="class-card bg-light-blue-1 p-3 rounded shadow-sm d-flex justify-content-between align-items-start">
+                    <div>
+                        <h5 class="fw-bold mb-2">Class 4<sup>th</sup></h5>
+                        <ul class="list-unstyled small mb-0">
+                            <li>1. English 2. Hindi</li>
+                            <li>3. Mathematics 4. Science</li>
+                            <li><a href="#" class="text-decoration-none text-danger fw-bold">and more...</a></li>
+                        </ul>
+                    </div>
+                    <div class="class-number-badge bg-orange rounded p-2 text-white fw-bold">
+                        04 <br><span class="badge-small-text">Syll.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="class-card bg-light-orange-1 p-3 rounded shadow-sm d-flex justify-content-between align-items-start">
+                    <div>
+                        <h5 class="fw-bold mb-2">Class 5<sup>th</sup></h5>
+                        <ul class="list-unstyled small mb-0">
+                            <li>1. English 2. Hindi</li>
+                            <li>3. Mathematics 4. Science</li>
+                            <li><a href="#" class="text-decoration-none text-danger fw-bold">and more...</a></li>
+                        </ul>
+                    </div>
+                    <div class="class-number-badge bg-orange rounded p-2 text-white fw-bold">
+                        05 <br><span class="badge-small-text">Syll.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="class-card bg-light-blue-2 p-3 rounded shadow-sm d-flex justify-content-between align-items-start">
+                    <div>
+                        <h5 class="fw-bold mb-2">Class 6<sup>th</sup></h5>
+                        <ul class="list-unstyled small mb-0">
+                            <li>1. English 2. Hindi</li>
+                            <li>3. Mathematics 4. Science</li>
+                            <li><a href="#" class="text-decoration-none text-danger fw-bold">and more...</a></li>
+                        </ul>
+                    </div>
+                    <div class="class-number-badge bg-orange rounded p-2 text-white fw-bold">
+                        06 <br><span class="badge-small-text">Syll.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="class-card bg-light-red p-3 rounded shadow-sm d-flex justify-content-between align-items-start">
+                    <div>
+                        <h5 class="fw-bold mb-2">Class 7<sup>th</sup></h5>
+                        <ul class="list-unstyled small mb-0">
+                            <li>1. English 2. Hindi</li>
+                            <li>3. Mathematics 4. Science</li>
+                            <li><a href="#" class="text-decoration-none text-danger fw-bold">and more...</a></li>
+                        </ul>
+                    </div>
+                    <div class="class-number-badge bg-orange rounded p-2 text-white fw-bold">
+                        07 <br><span class="badge-small-text">Syll.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="class-card bg-light-green-2 p-3 rounded shadow-sm d-flex justify-content-between align-items-start">
+                    <div>
+                        <h5 class="fw-bold mb-2">Class 8<sup>th</sup></h5>
+                        <ul class="list-unstyled small mb-0">
+                            <li>1. English 2. Hindi</li>
+                            <li>3. Mathematics 4. Science</li>
+                            <li><a href="#" class="text-decoration-none text-danger fw-bold">and more...</a></li>
+                        </ul>
+                    </div>
+                    <div class="class-number-badge bg-orange rounded p-2 text-white fw-bold">
+                        08 <br><span class="badge-small-text">Syll.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="class-card bg-light-orange-2 p-3 rounded shadow-sm d-flex justify-content-between align-items-start">
+                    <div>
+                        <h5 class="fw-bold mb-2">Class 9<sup>th</sup></h5>
+                        <ul class="list-unstyled small mb-0">
+                            <li>1. English 2. Hindi</li>
+                            <li>3. Mathematics 4. Science</li>
+                            <li><a href="#" class="text-decoration-none text-danger fw-bold">and more...</a></li>
+                        </ul>
+                    </div>
+                    <div class="class-number-badge bg-orange rounded p-2 text-white fw-bold">
+                        09 <br><span class="badge-small-text">Syll.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="class-card bg-light-blue-3 p-3 rounded shadow-sm d-flex justify-content-between align-items-start">
+                    <div>
+                        <h5 class="fw-bold mb-2">Class 10<sup>th</sup></h5>
+                        <ul class="list-unstyled small mb-0">
+                            <li>1. English 2. Hindi</li>
+                            <li>3. Mathematics 4. Science</li>
+                            <li><a href="#" class="text-decoration-none text-danger fw-bold">and more...</a></li>
+                        </ul>
+                    </div>
+                    <div class="class-number-badge bg-orange rounded p-2 text-white fw-bold">
+                        10 <br><span class="badge-small-text">Syll.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+                <div class="class-card bg-light-purple p-3 rounded shadow-sm d-flex justify-content-between align-items-start">
+                    <div>
+                        <h5 class="fw-bold mb-2">Class 11<sup>th</sup></h5>
+                        <ul class="list-unstyled small mb-0">
+                            <li>1. English 2. Hindi</li>
+                            <li>3. Mathematics 4. Physics</li>
+                            <li><a href="#" class="text-decoration-none text-danger fw-bold">and more...</a></li>
+                        </ul>
+                    </div>
+                    <div class="class-number-badge bg-orange rounded p-2 text-white fw-bold">
+                        11 <br><span class="badge-small-text">Syll.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="class-card bg-light-purple-2 p-3 rounded shadow-sm d-flex justify-content-between align-items-start">
+                    <div>
+                        <h5 class="fw-bold mb-2">Class 12<sup>th</sup></h5>
+                        <ul class="list-unstyled small mb-0">
+                            <li>1. English 2. Hindi</li>
+                            <li>3. Mathematics 4. Physics</li>
+                            <li><a href="#" class="text-decoration-none text-danger fw-bold">and more...</a></li>
+                        </ul>
+                    </div>
+                    <div class="class-number-badge bg-orange rounded p-2 text-white fw-bold">
+                        12 <br><span class="badge-small-text">Syll.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+   <section class="olympiad-winners-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3 text-white">Olympiad Winners</h2>
+                <p class="lead text-white-50">Meet our toppers from 2024-25</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-10">
+                    <div class="winner-card">
+                        <div class="rank-badge">1 RANK</div>
+                        <img src="img/1.png" alt="Aditi Kumari">
+                        <h5 class="mt-auto">Aditi Kumari</h5>
+                        <p>Cyber Security Olympiad</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-10">
+                    <div class="winner-card">
+                        <div class="rank-badge">1 RANK</div>
+                        <img src="img/1.png" alt="Aavya Singh">
+                        <h5 class="mt-auto">Aavya Singh</h5>
+                        <p>Chemistry Olympiad</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-10">
+                    <div class="winner-card">
+                        <div class="rank-badge">2 RANK</div>
+                        <img src="img/1.png" alt="Reyansh Raj">
+                        <h5 class="mt-auto">Reyansh Raj</h5>
+                        <p>Hindi Olympiad</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-10">
+                    <div class="winner-card">
+                        <div class="rank-badge">3 RANK</div>
+                        <img src="img/1.png" alt="Sairaj Vishvambar Wankhede">
+                        <h5 class="mt-auto">Sairaj Vishvambar Wankhede</h5>
+                        <p>Mathematics Olympiad</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <button class="btn btn-view-all">Click here to View All</button>
+            </div>
+        </div>
+    </section>
+
+
+
+     <section class="olympiad-subjects-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="lead text-muted">Computer, Cyber Security, General Knowledge, Reasoning, History, Geography, Accountancy, Psychology, and Business Studies</p>
+                <p class="lead text-muted fw-bold">From foundational learning to future-ready skills, the Olympiad supports holistic academic growth.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-10">
+                    <div class="olympiad-subject-card card-hindi">
+                        <div class="card-content">
+                            <h4>Hindi Olympiad</h4>
+                            <p>हिंदी एक ऐसी भाषा है जो संचार, समझ और आलोचनात्मक सोच को बढ़ाती है। शैक्षिक सफलता, प्रभावी अभिव्यक्ति और तार्किक तर्क के लिए हिंदी में प्रवीणता आवश्यक है।</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-10">
+                    <div class="olympiad-subject-card card-english bordered">
+                        <div class="card-content">
+                            <h4>English Olympiad</h4>
+                            <p>English is a global language that enhances communication, comprehension, and critical thinking skills. Proficiency in English is essential for academic success, effective expression, and logical reasoning.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-10">
+                    <div class="olympiad-subject-card card-mathematics">
+                        <div class="card-content">
+                            <h4>Mathematics Olympiad</h4>
+                            <p>MATHS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-10">
+                    <div class="olympiad-subject-card card-science">
+                        <div class="card-content">
+                            <h4>Science Olympiad</h4>
+                            <p>SCIENCE</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-10">
+                    <div class="olympiad-subject-card card-physics">
+                        <div class="card-content">
+                            <h4>Physics Olympiad</h4>
+                            <p>PHYSICS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-10">
+                    <div class="olympiad-subject-card card-chemistry">
+                        <div class="card-content">
+                            <h4>Chemistry Olympiad</h4>
+                            <p>CHEMISTRY</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-10">
+                    <div class="olympiad-subject-card card-biology">
+                        <div class="card-content">
+                            <h4>Biology Olympiad</h4>
+                            <p>BIOLOGY</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+  
+
+    <section class="language-section">
+        <div class="container">
+            <div class="text-content">
+                <h3>PREPARE IN YOUR LANGUAGE</h3>
+                <h2><span class="gradient-text">AVAILABLE LANGUAGES</span></h2>
+                <p class="languages-list">English, Hindi, Bengali, Marathi, Gujarati, Tamil, Telugu, Kannada, Malayalam, Odia and Assamese</p>
+                <div class="call-to-action-box">
+                    and more are coming soon...
+                </div>
+            </div>
+            <div class="illustration d-none d-md-block"> <img src="img/1.png" alt="Languages Illustration">
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="stats-row">
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <h3>12,00,000 +</h3>
+                    <p>Students</p>
+                </div>
+                <div class="stat-item schools">
+                    <i class="fas fa-school"></i>
+                    <h3>35000+</h3>
+                    <p>Schools</p>
+                </div>
+                <div class="stat-item states">
+                    <i class="fas fa-globe"></i>
+                    <h3>36</h3>
+                    <p>State & UT</p>
+                </div>
+            </div>
+
+            <div class="contact-content row g-0">
+                <div class="col-lg-6 col-md-12 contact-image-col">
+                    </div>
+                <div class="col-lg-6 col-md-12 contact-form-col">
+                    <h2>Contact Us</h2>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Name*" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Email*" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control" placeholder="Mobile number* e.g. 9876543210" required>
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-select" required>
+                                    <option selected disabled value="">--Query As--</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="enrollment">Enrollment</option>
+                                </select>
+                            </div>
+                        </div>
+                        <textarea class="form-control" rows="4" placeholder="Message*" required></textarea>
+                        <button type="submit" class="btn btn-submit">SUBMIT</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <section class="blogs-section">
+        <div class="container">
+            <h2>Our Blogs</h2>
+            <p class="lead">Read the latest from the world of Education, Expert Views, Technology, Assessments and more</p>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-10">
+                    <div class="blog-card">
+                        <img src="img/1.png" alt="Place Value, Carrying and Borrowing">
+                        <div class="card-body">
+                            <h5>Place Value, Carrying and Borrowing: an Approach for Class 1 and 2</h5>
+                            <p>We will understand the basic concepts of Place Value, Carrying and Borrowing.</p>
+                            <a href="#" class="btn btn-read-more">READ MORE</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-10">
+                    <div class="blog-card">
+                        <img src="img/1.png" alt="On The Brain">
+                        <div class="card-body">
+                            <h5>On The Brain</h5>
+                            <p>Extracts from an article by Marian Diamond The 1990s have been declared the Dec</p>
+                            <a href="#" class="btn btn-read-more">READ MORE</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-10">
+                    <div class="blog-card">
+                        <img src="img/1.png" alt="Effect of Mindset on Learning">
+                        <div class="card-body">
+                            <h5>Excerpts from an article by Carol Dweck on the effect of mindset on learning</h5>
+                            <p>Our society worships talent, and many people assume that possessing superior i</p>
+                            <a href="#" class="btn btn-read-more">READ MORE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+       <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Information</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">User Manual</a></li>
+                        <li><a href="#">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>CSC Academy Olympiads</h5>
+                    <ul>
+                        <li><a href="#">All Olympiad Exams</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>News & Links</h5>
+                    <ul>
+                        <li><a href="#">CSC Olympiad News</a></li>
+                        <li><a href="#">Press Release</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Information</h5>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i>238, Okhla Phase-3, New Delhi - 110020</p>
+                        <p><i class="fas fa-envelope"></i>support[at]cscacademy[dot]org. <br>&nbsp;&nbsp;&nbsp;&nbsp;Olympiad[at]cscacademy[dot]org</p>
+                        <p><i class="fas fa-phone-alt"></i>14599 for VLEs</p>
+                        <p><i class="fas fa-phone-alt"></i>011-49754923/24 for non vle</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2025 | All rights reserved by One Roof Web</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Registration - CSC Olympiad</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif !important;
+            background-color: #f8f9fa;
+            color: #343a40;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .registration-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 90%;
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+        }
+
+        .how-to-get-started {
+            flex: 1;
+            min-width: 300px; /* Minimum width for this column */
+            background-color: #e0e9f6; /* Light blue from image */
+            padding: 40px;
+            color: #343a40;
+        }
+
+        .how-to-get-started h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #1d3557; /* Dark blue for heading */
+        }
+
+        .how-to-get-started .step-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .how-to-get-started .step-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .how-to-get-started .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #0d6efd; /* Blue circle */
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-right: 15px;
+            font-size: 1rem;
+            border: 2px solid #fff; /* White border */
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+        }
+
+        .how-to-get-started .step-content h5 {
+            font-weight: bold;
+            color: #0d6efd; /* Blue for step title */
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        .how-to-get-started .step-content p {
+            color: #555;
+            line-height: 1.4;
+        }
+        
+        .how-to-get-started .contact-info {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        .how-to-get-started .contact-info p {
+            margin-bottom: 10px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        .how-to-get-started .contact-info i {
+            margin-right: 10px;
+            color: #fd7e14; /* Orange icon */
+            font-size: 1.1rem;
+        }
+
+        .registration-form-col {
+            flex: 2;
+            min-width: 400px; /* Minimum width for the form column */
+            background-color: #1d3557; /* Dark blue background from image */
+            padding: 40px;
+            color: white;
+        }
+
+        .registration-form-col h2 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .registration-form-col .form-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .registration-form-col .form-control,
+        .registration-form-col .form-select {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 15px;
+            margin-bottom: 20px; /* Increased spacing */
+            border-radius: 8px;
+        }
+        .registration-form-col .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .registration-form-col .form-control:focus,
+        .registration-form-col .form-select:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: none;
+            color: white;
+        }
+        .registration-form-col .form-select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        }
+        .registration-form-col .form-select option {
+            color: #343a40; /* Dark text for options */
+            background-color: white; /* White background for options */
+        }
+        .registration-form-col .form-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.8rem;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .registration-form-col .btn-submit {
+            background-color: #fd7e14; /* Orange */
+            color: white;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 8px;
+            width: 100%;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .registration-form-col .btn-submit:hover {
+            background-color: #e66a00;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991.98px) {
+            .registration-container {
+                flex-direction: column;
+                width: 95%;
+            }
+            .how-to-get-started,
+            .registration-form-col {
+                min-width: unset;
+                width: 100%;
+                padding: 30px;
+            }
+            .how-to-get-started h2 {
+                text-align: center;
+            }
+            .how-to-get-started .step-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .how-to-get-started .step-number {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            .how-to-get-started .contact-info p {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="registration-container">
+        <div class="how-to-get-started">
+            <h2>SCHOOL REGISTRATION</h2>
+            <p class="lead fw-bold mb-4">How to Get Started?</p>
+
+            <ol class="step-list">
+                <li class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h5>Register Your School</h5>
+                        <p>Fill out the School Registration Form with your school and coordinator details. It takes less than 5 minutes!</p>
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h5>Login & Add Students</h5>
+                        <p>Use your credentials to log in to your School Admin Panel.</p>
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h5>Make Payment</h5>
+                        <p>Based on the number of students enrolled, Make the payment securely through the online gateway.</p>
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h5>Activate Students</h5>
+                        <p>Activate student to start practicing.</p>
+                    </div>
+                </li>
+            </ol>
+
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i>Email Id: Olympiad[at]cscacademy[dot]org</p>
+                <p><i class="fas fa-phone-alt"></i>Phone No.: 011-49754923/24</p>
+            </div>
+        </div>
+
+        <div class="registration-form-col">
+            <h2>REGISTER YOUR SCHOOL</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="schoolName" class="form-label">School Name *</label>
+                    <input type="text" class="form-control" id="schoolName" placeholder="Enter School Name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="numStudents" class="form-label">Number of Students *</label>
+                    <input type="number" class="form-control" id="numStudents" placeholder="Number of Students in School" required>
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address *</label>
+                    <input type="text" class="form-control" id="address" placeholder="Enter Complete School Address" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="state" class="form-label">State *</label>
+                        <select class="form-select" id="state" required>
+                            <option selected disabled value="">-- Select State --</option>
+                            <option>Uttar Pradesh</option>
+                            <option>Maharashtra</option>
+                            <option>Delhi</option>
+                            </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="city" class="form-label">City *</label>
+                        <select class="form-select" id="city" required>
+                            <option selected disabled value="">-- Select City --</option>
+                            <option>Lucknow</option>
+                            <option>Mumbai</option>
+                            <option>New Delhi</option>
+                            </select>
+                    </div>
+                </div>
+                <h5 class="mt-4 mb-3 text-white text-center">Contact Person</h5>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="contactName" class="form-label">Name *</label>
+                        <input type="text" class="form-control" id="contactName" placeholder="Enter Name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="contactAddress" class="form-label">Address *</label>
+                        <input type="text" class="form-control" id="contactAddress" placeholder="Enter Contact Address" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="contactEmail" class="form-label">Email *</label>
+                        <input type="email" class="form-control" id="contactEmail" placeholder="Enter Contact Email" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="contactMobile" class="form-label">Mobile *</label>
+                        <input type="tel" class="form-control" id="contactMobile" placeholder="Enter Contact Mobile" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Comment</label>
+                    <textarea class="form-control" id="comment" rows="3" placeholder="Enter Comment"></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit mt-4">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Olympiad - CSC Olympiad</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif !important;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #f8f9fa;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            color: #343a40;
+        }
+        @media (max-width: 767.98px) {
+            .top-bar {
+                display: none !important;
+            }
+        }
+
+        /* Navbar specific styling */
+        .navbar-brand img {
+            max-height: 50px;
+            margin-right: 5px;
+        }
+        .navbar-brand .logo-text h5 {
+            font-size: 1.25rem;
+            line-height: 1;
+            margin-bottom: 0;
+        }
+        .navbar-brand .logo-text .small {
+            font-size: 0.65rem;
+            line-height: 1;
+        }
+        .navbar .nav-link.active {
+            color: #0d6efd !important;
+            border-color: #0d6efd !important;
+        }
+        .navbar-collapse .nav-item .btn-outline-secondary {
+            border-color: #0d6efd;
+            color: #0d6efd;
+            white-space: nowrap;
+            line-height: 1.2;
+            padding: 0.375rem 0.75rem;
+            font-size: 0.875rem;
+        }
+        .navbar-collapse .nav-item .btn-outline-secondary small {
+            font-size: 0.75rem;
+        }
+
+        /* Adjust Navbar for mobile collapsed state */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: white;
+                padding: 1rem;
+            }
+            .navbar-collapse .navbar-nav .nav-item {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 0.5rem;
+            }
+            .navbar-collapse .navbar-nav .nav-link,
+            .navbar-collapse .navbar-nav .dropdown-menu .dropdown-item {
+                padding: 0.75rem 1rem;
+            }
+            .navbar-collapse .btn-outline-primary,
+            .navbar-collapse .btn-primary {
+                width: 100%;
+                margin-top: 10px;
+            }
+            .navbar-nav .dropdown-menu {
+                width: 100%;
+            }
+        }
+
+        /* Custom CSS for dropdown on hover */
+        @media (min-width: 992px) { /* Only apply on desktop */
+            .navbar-nav .dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0; /* Remove the gap so it looks seamless */
+            }
+            /* Style for the dropdown menu itself */
+            .navbar-nav .dropdown-menu {
+                border: none;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                border-radius: 8px;
+                padding: 10px 0;
+                min-width: 180px; /* Adjust width as needed */
+            }
+            .navbar-nav .dropdown-menu .dropdown-item {
+                font-size: 0.95rem;
+                padding: 8px 15px;
+                color: #343a40;
+            }
+            .navbar-nav .dropdown-menu .dropdown-item:hover {
+                background-color: #f0f0f0;
+                color: #0d6efd;
+            }
+        }
+
+
+        /* Hero Section for Subject Page (Class-5 section) */
+        .subject-hero {
+            background-color: #506a8e; /* Dark blue from image */
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .subject-hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .subject-hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 20px;
+        }
+        .subject-hero .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .subject-hero .feature-item {
+            background-color: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .subject-hero .feature-item i {
+            margin-right: 10px;
+            color: #fd7e14; /* Orange icons */
+        }
+        .subject-hero .price-box {
+            background-color: white;
+            color: #343a40;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 250px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .subject-hero .price-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #dc3545; /* Red badge */
+            color: white;
+            padding: 5px 15px;
+            border-radius: 0 10px 0 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .subject-hero .price-box .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0d6efd; /* Blue price */
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        .subject-hero .price-box .per-subject {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        .subject-hero .price-box .btn-buy-now {
+            background-color: #dc3545; /* Red button */
+            color: white;
+            font-weight: bold;
+            padding: 10px 30px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .subject-hero .price-box .btn-buy-now:hover {
+            background-color: #c82333;
+        }
+
+        @media (max-width: 991.98px) {
+            .subject-hero .features-grid {
+                grid-template-columns: 1fr 1fr; /* Two columns on medium screens */
+            }
+            .subject-hero .price-box {
+                margin-top: 30px;
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .subject-hero h1 {
+                font-size: 2rem;
+                text-align: center;
+            }
+            .subject-hero p {
+                text-align: center;
+            }
+            .subject-hero .features-grid {
+                grid-template-columns: 1fr; /* One column on small screens */
+            }
+            .subject-hero .price-box {
+                margin-top: 30px;
+            }
+        }
+
+
+        /* Main Content Section (Left Nav and Right Content) */
+        .main-content-area {
+            padding: 30px 0;
+        }
+
+        .left-sidebar {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            padding: 20px;
+            min-height: 400px;
+        }
+        .left-sidebar h5 {
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #0d6efd; /* Blue heading */
+        }
+        .left-sidebar .nav-link {
+            padding: 10px 15px;
+            color: #343a40;
+            font-weight: 500;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .left-sidebar .nav-link.active,
+        .left-sidebar .nav-link:hover {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .right-content {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            padding: 30px;
+            min-height: 400px;
+        }
+        .right-content .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .right-content .content-header h4 {
+            font-weight: bold;
+            color: #0d6efd; /* Blue heading */
+            margin-bottom: 0;
+        }
+        .right-content .content-header .check-availability-btn {
+            background-color: #28a745; /* Green button */
+            color: white;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .right-content .content-header .check-availability-btn:hover {
+            background-color: #218838;
+        }
+
+        .right-content p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        .right-content h5 {
+            font-weight: bold;
+            color: #343a40;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Key Features and Structure section */
+        .feature-box, .structure-box {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #343a40;
+            font-size: 0.95rem;
+        }
+        .feature-box i, .structure-box i {
+            margin-right: 10px;
+            color: #0d6efd; /* Blue icon */
+        }
+        .feature-box.orange i { color: #fd7e14; } /* Orange icon for specific features */
+        .feature-box.green i { color: #28a745; } /* Green icon for specific features */
+
+        /* Syllabus Section */
+        .syllabus-section h5, .sample-questions-section h5 {
+            font-weight: bold;
+            color: #0d6efd; /* Blue heading */
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .syllabus-section p {
+            background-color: #e0f2ff; /* Light blue background */
+            padding: 20px;
+            border-radius: 8px;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            color: #343a40;
+        }
+
+        /* Sample Questions Section */
+        .sample-questions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .sample-question-item {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            color: #343a40;
+        }
+        .sample-question-item strong {
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .sample-question-item ol {
+            list-style: lower-alpha;
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        .sample-question-item ol li {
+            margin-bottom: 3px;
+        }
+
+        @media (max-width: 767.98px) {
+            .left-sidebar {
+                margin-bottom: 20px;
+            }
+            .left-sidebar h5 {
+                text-align: center;
+            }
+            .right-content {
+                padding: 20px;
+            }
+            .right-content .content-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .right-content .content-header h4 {
+                margin-bottom: 15px;
+            }
+            .sample-questions-grid {
+                grid-template-columns: 1fr; /* Stack questions on small screens */
+            }
+        }
+
+
+        /* Footer Section */
+        .footer-section {
+            background-color: #1d3557; /* Dark blue from image */
+            color: white;
+            padding: 60px 0 20px 0;
+            font-size: 0.9rem;
+        }
+        .footer-section h5 {
+            color: white;
+            font-weight: bold;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .footer-section h5::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #fd7e14; /* Orange line */
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .footer-section ul li a:hover {
+            color: #fd7e14; /* Orange hover */
+        }
+        .footer-section .contact-info p {
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: flex-start;
+        }
+        .footer-section .contact-info i {
+            margin-right: 10px;
+            color: #fd7e14; /* Orange icons */
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive adjustments for footer */
+        @media (max-width: 767.98px) {
+            .footer-section .col-md-3 {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .footer-section h5::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .footer-section .contact-info p {
+                justify-content: center;
+            }
+            .footer-section .contact-info i {
+                margin-right: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar bg-light py-1 d-none d-md-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-start">
+                    <a href="mailto:olympiad@cscacademy.org" class="text-decoration-none text-dark"><i class="fas fa-envelope me-2"></i>olympiad@cscacademy.org</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-dark me-3"><i class="fab fa-whatsapp"></i></a>
+                    <button class="btn btn-sm btn-info me-2">Date Sheet</button>
+                    <button class="btn btn-sm btn-primary">VLE Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://via.placeholder.com/60x60?text=Logo" alt="CSC Olympiad Logo" class="me-2">
+                <div class="logo-text">
+                    <h5 class="mb-0 fw-bold">CSC</h5>
+                    <div class="small text-muted">OLYMPIAD</div>
+                    <div class="small text-muted">GET UP TO THE TOP</div>
+                </div>
+            </a>
+            
+            <a class="btn btn-outline-primary btn-sm d-md-none me-2" href="#">All Olympiads</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown d-none d-lg-block me-2">
+                        <a class="btn btn-outline-secondary btn-sm dropdown-toggle" href="#" id="dropdownAllOlympiads" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            All Olympiads<br><small>Syllabus, Sample Papers</small>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownAllOlympiads">
+                            <li><a class="dropdown-item" href="#">Class 1</a></li>
+                            <li><a class="dropdown-item" href="#">Class 2</a></li>
+                            <li><a class="dropdown-item" href="#">Class 3</a></li>
+                            <li><a class="dropdown-item" href="#">Class 4</a></li>
+                            <li><a class="dropdown-item" href="#">Class 5</a></li>
+                            <li><a class="dropdown-item" href="#">Class 6</a></li>
+                            <li><a class="dropdown-item" href="#">Class 7</a></li>
+                            <li><a class="dropdown-item" href="#">Class 8</a></li>
+                            <li><a class="dropdown-item" href="#">Class 9</a></li>
+                            <li><a class="dropdown-item" href="#">Class 10</a></li>
+                            <li><a class="dropdown-item" href="#">Class 11</a></li>
+                            <li><a class="dropdown-item" href="#">Class 12</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownWinners" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Winners
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownWinners">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gallery</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center d-none d-lg-flex">
+                    <div class="nav-item dropdown me-2">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownLogin" data-bs-toggle="dropdown" aria-expanded="false">
+                            Login
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownLogin">
+                            <li><a class="dropdown-item" href="#">Student Login</a></li>
+                            <li><a class="dropdown-item" href="#">Center Login</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownRegister" data-bs-toggle="dropdown" aria-expanded="false">
+                            Register
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownRegister">
+                            <li><a class="dropdown-item" href="#">Student Register</a></li>
+                            <li><a class="dropdown-item" href="#">Center Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="subject-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-12 text-lg-start text-center">
+                    <h1>Class-5</h1>
+                    <p>Complete olympiad package with practice tests, quizzes, study materials and more!</p>
+                    <div class="features-grid">
+                        <div class="feature-item"><i class="fas fa-certificate"></i>Certificate</div>
+                        <div class="feature-item"><i class="fas fa-medal"></i>Medals & Awards</div>
+                        <div class="feature-item"><i class="fas fa-graduation-cap"></i>Scholarship</div>
+                        <div class="feature-item"><i class="fas fa-award"></i>National Recognition</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 mt-4 mt-lg-0">
+                    <div class="price-box">
+                        <div class="price-badge">Offer</div>
+                        <div class="price">₹299</div>
+                        <div class="per-subject">per subject</div>
+                        <button class="btn btn-buy-now">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-content-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <div class="left-sidebar">
+                        <h5>Academic</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a class="nav-link active" href="#">English</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Hindi</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Mathematics</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Science</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Logical Reasoning</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Computer</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">General Knowledge</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-9 col-md-8">
+                    <div class="right-content">
+                        <div class="content-header">
+                            <h4>CSC Academy National English Olympiad</h4>
+                            <button class="btn check-availability-btn">CHECK REGIONS AVAILABILITY</button>
+                        </div>
+                        
+                        <h5>About</h5>
+                        <p>English is a global language that enhances communication, comprehension, and critical thinking skills. Proficiency in English is essential for academic success, effective expression, and logical reasoning. The CSC English Olympiad is designed to strengthen students' grammar, vocabulary, reading comprehension, and writing abilities while fostering a deeper understanding of the language.</p>
+                        <p>Idea for students aiming to improve their language proficiency, and excel in English.</p>
+
+                        <h5>Key Features</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="feature-box"><i class="fas fa-check-circle"></i>Chapter Wise Quizzes</div>
+                                <div class="feature-box"><i class="fas fa-check-circle"></i>Practice Tests</div>
+                                <div class="feature-box"><i class="fas fa-check-circle"></i>Study Material <span class="badge bg-secondary ms-2">Available in English</span></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-box"><i class="fas fa-check-circle"></i>Concept Based Questions</div>
+                                <div class="feature-box"><i class="fas fa-check-circle"></i>Topic Wise Quiz</div>
+                                <div class="feature-box"><i class="fas fa-check-circle"></i>Performance Analysis Report</div>
+                            </div>
+                        </div>
+
+                        <h5>National Olympiad Structure</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="structure-box"><i class="fas fa-check-circle"></i>Total Questions: 50</div>
+                                <div class="structure-box"><i class="fas fa-check-circle"></i>Online Proctoring</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="structure-box"><i class="fas fa-check-circle"></i>Test Duration: 60 Minutes</div>
+                            </div>
+                        </div>
+
+                        <h5 class="syllabus-section">Syllabus</h5>
+                        <p>Nouns: Proper Nouns, Common Nouns, Collective Nouns, Abstract Nouns, Compound Nouns; Pronouns: Personal, Possessive, Reflexive Pronouns, Demonstrative Pronouns, Indefinite Pronouns, Relative Pronouns; Adjectives: Degrees of Comparison, Adjectives of Quality, Adjectives of Quantity, Adjectives of Number, Possessive Adjectives, Demonstrative Adjectives; Articles; Adverbs: Adverbs of time, Adverbs of Manner, Adverbs of Place; Intensifiers; Prepositions; Verbs: Transitive and Intransitive Verbs; Tenses; Reading Comprehension; Vocabulary: Synonyms and Antonyms, One word Substitution, Spellings, Odd one out, Homonyms, Analogies, Idioms; Figurative Language: Similes</p>
+
+                        <h5 class="sample-questions-section">Sample Questions</h5>
+                        <div class="sample-questions-grid">
+                            <div class="sample-question-item">
+                                <strong>Q.1 The king punished his minister.</strong>
+                                <ol>
+                                    <li>Proper Noun</li>
+                                    <li>Common Noun</li>
+                                    <li>Collective Noun</li>
+                                    <li>Material Noun</li>
+                                </ol>
+                            </div>
+                            <div class="sample-question-item">
+                                <strong>Q.2 She had thrown all the food.</strong>
+                                <ol>
+                                    <li>Proper Noun</li>
+                                    <li>Common Noun</li>
+                                    <li>Collective Noun</li>
+                                    <li>Material Noun</li>
+                                </ol>
+                            </div>
+                            <div class="sample-question-item">
+                                <strong>Q.3 He should have controlled his anger. The underlined noun is a</strong>
+                                <ol>
+                                    <li>Common Noun</li>
+                                    <li>Abstract Noun</li>
+                                    <li>Material Noun</li>
+                                    <li>Proper Noun</li>
+                                </ol>
+                            </div>
+                            <div class="sample-question-item">
+                                <strong>Q.4 I am ready to say this _____ her face.</strong>
+                                <ol>
+                                    <li>on</li>
+                                    <li>at</li>
+                                    <li>to</li>
+                                    <li>in</li>
+                                </ol>
+                            </div>
+                            <div class="sample-question-item">
+                                <strong>Q.5 He always does work ____ time.</strong>
+                                <ol>
+                                    <li>in</li>
+                                    <li>by</li>
+                                    <li>with</li>
+                                    <li>at</li>
+                                </ol>
+                            </div>
+                            <div class="sample-question-item">
+                                <strong>Q.6 She will have been married _____ now.</strong>
+                                <ol>
+                                    <li>till</li>
+                                    <li>by</li>
+                                    <li>for</li>
+                                    <li>as</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Information</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">User Manual</a></li>
+                        <li><a href="#">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>CSC Academy Olympiads</h5>
+                    <ul>
+                        <li><a href="#">All Olympiad Exams</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>News & Links</h5>
+                    <ul>
+                        <li><a href="#">CSC Olympiad News</a></li>
+                        <li><a href="#">Press Release</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Information</h5>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i>238, Okhla Phase-3, New Delhi - 110020</p>
+                        <p><i class="fas fa-envelope"></i>support[at]cscacademy[dot]org. <br>&nbsp;&nbsp;&nbsp;&nbsp;Olympiad[at]cscacademy[dot]org</p>
+                        <p><i class="fas fa-phone-alt"></i>14599 for VLEs</p>
+                        <p><i class="fas fa-phone-alt"></i>011-49754923/24 for non vle</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2025 | All rights reserved by CSC Academy</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
