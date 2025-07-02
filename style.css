@@ -1,0 +1,826 @@
+body {
+        font-family: 'Montserrat', sans-serif !important;
+    background-color: #f8f9fa; 
+}
+
+.navbar-brand img {
+    max-height: 50px;
+}
+
+.dropMainClass {
+    border: 2px solid #E0E9F6;
+    font-size: 11px;
+    padding: 4px;
+}
+.navbar .nav-link.active {
+    /* color: #0d6efd !important;  */
+    border-color: #FD7E14;
+}
+
+.navbar .btn-outline-secondary {
+    color: #6c757d;
+    white-space: nowrap;
+    line-height: 1.2;
+    padding: 0.375rem 0.75rem; 
+    font-size: 0.875rem; 
+}
+
+.navbar .btn-outline-secondary small {
+    font-size: 0.75rem; 
+}
+
+
+
+ @media (min-width: 992px) {
+            .navbar-nav .dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0; 
+            }
+            .navbar-nav .dropdown-menu {
+                border: none;
+                /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+                border-radius: 8px;
+                padding: 10px 0;
+                min-width: 180px; 
+            }
+            .navbar-nav .dropdown-menu .dropdown-item {
+                font-size: 0.95rem;
+                padding: 8px 15px;
+            }
+            .navbar-nav .dropdown-menu .dropdown-item:hover {
+                color: #FD7E14;
+            }
+        }
+
+/* Hero Section Styling */
+.hero-section {
+    background-color: #28a745; 
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100"><defs><pattern id="pattern-circles" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse"><circle id="circle" cx="5" cy="5" r="2.5" fill="rgba(255,255,255,0.1)"></circle></pattern></defs><rect x="0" y="0" width="100%" height="100%" fill="url(%23pattern-circles)"></rect></svg>'); /* Example of a subtle pattern, you'd need to create your own SVG or use an image */
+    color: white;
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 15px;
+    margin: 0 15px; 
+    padding-bottom: 80px; 
+}
+
+
+.hero-section .hero-image {
+    /* position: absolute; */
+    right: 0;
+    bottom: -100px;
+    max-width: 400px; 
+    height: auto;
+    z-index: 1; 
+}
+
+.hero-section .text-shadow-green {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section .hero-curiosity-text {
+    font-family: 'Georgia', serif; 
+    font-size: 1.2em; 
+    color: #ffeb3b;
+    display: inline-block;
+    transform: rotate(-5deg); 
+}
+
+.hero-section .hero-challenge-text {
+    font-family: 'Verdana', sans-serif; 
+    font-size: 1.2em; 
+    color: #fff;
+}
+
+
+.overlay-box {
+    position: absolute;
+    bottom: -30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px; 
+    z-index: 10; 
+    border-radius: 10px;
+    padding: 10px 20px !important;
+}
+
+
+.lower-sections .card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.lower-sections .card:hover {
+    transform: translateY(-5px);
+}
+
+
+
+
+
+@media (max-width: 991.98px) {
+    .hero-section .hero-image {
+        display: none; 
+    }
+    .hero-section {
+        padding-bottom: 50px; 
+    }
+    .overlay-box {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 30px;
+        width: auto; 
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar-brand h5 {
+        font-size: 1.25rem;
+    }
+    .navbar-brand .small {
+        font-size: 0.65rem;
+    }
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+.text-orange {
+    color: #fd7e14;
+}
+
+.class-card {
+    min-height: 150px; 
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+}
+
+.class-card h5 {
+    color: #333; 
+}
+
+.class-card ul {
+    color: #555; 
+    font-size: 0.9rem; 
+    padding-left: 0;
+}
+
+.class-card ul li {
+    margin-bottom: 3px;
+}
+
+.class-card .text-danger {
+    color: #dc3545 !important; 
+}
+
+.class-number-badge {
+    background-color: #fd7e14 !important; 
+    width: 60px; 
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem; 
+    line-height: 1.1;
+    position: relative; 
+    top: -10px; 
+    right: -10px; 
+    border: 2px solid white; 
+    box-shadow: 0 0 5px rgba(0,0,0,0.2); 
+}
+
+.class-number-badge .badge-small-text {
+    font-size: 0.7rem;
+    display: block; 
+    margin-top: -5px;
+}
+
+
+
+.bg-light-green {
+    background-color: #e0ffe0; 
+}
+.bg-light-blue-1 {
+    background-color: #e0f2ff;
+}
+.bg-light-orange-1 {
+    background-color: #fff0e0; 
+}
+.bg-light-blue-2 {
+    background-color: #e6f7ff;
+}
+.bg-light-red {
+    background-color: #ffe0e0;
+}
+.bg-light-green-2 {
+    background-color: #f0fff0; 
+}
+.bg-light-orange-2 {
+    background-color: #fff9e0; 
+}
+.bg-light-blue-3 {
+    background-color: #e0f7f7; 
+}
+.bg-light-purple {
+    background-color: #f0e0ff; 
+}
+.bg-light-purple-2 {
+    background-color: #f7e0ff; 
+}
+
+
+@media (max-width: 767.98px) {
+    .class-card {
+        min-height: auto; 
+    }
+    .class-number-badge {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        top: -5px;
+        right: -5px;
+    }
+    .class-number-badge .badge-small-text {
+        font-size: 0.6rem;
+    }
+}
+
+
+
+ .olympiad-winners-section {
+            background-color: #0d6efd; 
+            color: white;
+            padding: 60px 0;
+        }
+        .winner-card {
+            background-color: white;
+            color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            height: 100%; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .winner-card .rank-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fd7e14; 
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .winner-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #0d6efd;
+            margin: 20px auto 15px auto;
+        }
+        .winner-card h5 {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #0d6efd; 
+        }
+        .winner-card p {
+            font-size: 0.9rem;
+            color: #6c757d; 
+            margin-bottom: 0;
+        }
+        .btn-view-all {
+            background-color: #fd7e14;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-view-all:hover {
+            background-color: #e66a00;
+            color: white;
+        }
+
+      
+        @media (max-width: 767.98px) {
+            .olympiad-winners-section {
+                padding: 40px 0;
+            }
+            .winner-card {
+                margin-bottom: 30px; 
+            }
+            .winner-card:last-child {
+                margin-bottom: 0;
+            }
+            .winner-card img {
+                width: 100px;
+                height: 100px;
+                margin-top: 25px; 
+            }
+            .rank-badge {
+                font-size: 0.8rem;
+                padding: 4px 12px;
+                top: -10px;
+            }
+        }
+        .py-section {
+            padding: 80px 0;
+        }
+        .olympiad-subjects-section {
+            background-color: #f8f9fa; 
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .olympiad-subjects-section .section-header {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+        }
+
+        .olympiad-subject-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            text-align: center;
+            overflow: hidden; 
+            position: relative;
+            height: 250px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: white; 
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .olympiad-subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .olympiad-subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+            z-index: 1;
+        }
+
+        .olympiad-subject-card .card-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+        }
+        
+        .olympiad-subject-card h4 {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        .olympiad-subject-card p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 0;
+        }
+
+        
+        .card-hindi::before { background-image: url('https://via.placeholder.com/300x250/506a8e/ffffff?text=Hindi+Bg'); background-color: #506a8e; } 
+        .card-english::before { background-image: url('https://via.placeholder.com/300x250/78909c/ffffff?text=English+Bg'); background-color: #78909c; }
+        .card-mathematics::before { background-image: url('https://via.placeholder.com/300x250/4caf50/ffffff?text=Maths+Bg'); background-color: #4caf50; }
+        .card-science::before { background-image: url('https://via.placeholder.com/300x250/26a69a/ffffff?text=Science+Bg'); background-color: #26a69a; } 
+        .card-physics::before { background-image: url('https://via.placeholder.com/300x250/ef5350/ffffff?text=Physics+Bg'); background-color: #ef5350; } 
+        .card-chemistry::before { background-image: url('https://via.placeholder.com/300x250/ff7043/ffffff?text=Chemistry+Bg'); background-color: #ff7043; } 
+        .card-biology::before { background-image: url('https://via.placeholder.com/300x250/8d6e63/ffffff?text=Biology+Bg'); background-color: #8d6e63; } 
+
+        
+        .olympiad-subject-card.bordered {
+            border: 3px solid #6c757d; 
+            box-shadow: 0 0 0 5px rgba(108, 117, 125, 0.3), 0 4px 8px rgba(0,0,0,0.05); 
+        }
+        .olympiad-subject-card.bordered::before {
+             opacity: 0.6;
+        }
+
+       
+        @media (max-width: 767.98px) {
+            .olympiad-subjects-section {
+                padding: 40px 0;
+            }
+            .olympiad-subjects-section .section-header {
+                margin-bottom: 30px;
+            }
+            .olympiad-subject-card {
+                height: 220px; 
+                margin-bottom: 20px; 
+            }
+            .olympiad-subject-card:last-child {
+                margin-bottom: 0;
+            }
+            .olympiad-subject-card h4 {
+                font-size: 1.3rem;
+            }
+            .olympiad-subject-card p {
+                font-size: 0.85rem;
+            }
+        }
+
+
+       
+        .language-section {
+            background-color: #e0e9f6;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 0 15px 40px 15px; 
+        }
+        .language-section .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .language-section .text-content {
+            flex: 1;
+            max-width: 50%;
+            text-align: left;
+        }
+        .language-section h3 {
+            font-size: 1.2rem;
+            color: #6c757d; 
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .language-section h2 {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #343a40; 
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .language-section .languages-list {
+            font-size: 1.1rem;
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+        .language-section .call-to-action-box {
+            background: linear-gradient(to right, #0d6efd, #6c757d);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: center;
+            display: inline-block; 
+            width: 100%; 
+        }
+
+        .language-section .illustration {
+            flex: 1;
+            max-width: 50%; 
+            text-align: right;
+            position: relative;
+            padding-left: 20px; 
+        }
+        .language-section .illustration img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        
+        .language-section .gradient-text {
+            background: linear-gradient(to right, #0d6efd, #8e44ad); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent; 
+        }
+
+        @media (max-width: 991.98px) {
+            .language-section .text-content,
+            .language-section .illustration {
+                max-width: 100%; 
+                text-align: center;
+                padding-left: 0;
+            }
+            .language-section .illustration {
+                margin-top: 30px;
+            }
+            .language-section h2 {
+                font-size: 2.2rem; 
+            }
+            .language-section .languages-list {
+                font-size: 1rem;
+            }
+        }
+
+
+        .contact-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+        }
+        .stats-row {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            padding: 30px 20px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .stat-item {
+            flex: 1;
+            min-width: 150px;
+            padding: 10px;
+        }
+        .stat-item i {
+            font-size: 2.5rem;
+            color: #0d6efd;
+            margin-bottom: 10px;
+        }
+        .stat-item.schools i {
+            color: #fd7e14; 
+        }
+        .stat-item.states i {
+            color: #8e44ad; 
+        }
+        .stat-item h3 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .stat-item p {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+        .contact-content {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .contact-image-col {
+            background-image: url('https://via.placeholder.com/600x450?text=Student+Writing');
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+        }
+        .contact-form-col {
+            background-color: #0d6efd; 
+            padding: 40px;
+            color: white;
+        }
+        .contact-form-col h2 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .contact-form-col .form-control {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .contact-form-col .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .contact-form-col .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: none;
+            color: white;
+        }
+        .contact-form-col .form-select {
+             background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        }
+        .contact-form-col .form-select option {
+            color: #343a40; 
+            background-color: white; 
+        }
+
+        .contact-form-col .btn-submit {
+            background-color: #fd7e14;
+            color: white;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 8px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form-col .btn-submit:hover {
+            background-color: #e66a00;
+        }
+        @media (max-width: 991.98px) {
+            .contact-image-col {
+                min-height: 250px;
+            }
+            .stat-item {
+                flex-basis: 50%;
+                margin-bottom: 20px;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .stat-item {
+                flex-basis: 100%;
+            }
+        }
+
+
+       
+        .blogs-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .blogs-section h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #343a40;
+        }
+        .blogs-section p.lead {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 50px;
+        }
+        .blog-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .blog-card .card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .blog-card h5 {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            color: #343a40;
+        }
+        .blog-card p {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+            flex-grow: 1; 
+        }
+        .blog-card .btn-read-more {
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            align-self: flex-start; 
+            transition: background-color 0.3s ease;
+        }
+        .blog-card .btn-read-more:hover {
+            background-color: #0a58ca;
+            color: white;
+        }
+        @media (max-width: 767.98px) {
+            .blogs-section h2 {
+                font-size: 2rem;
+            }
+            .blogs-section p.lead {
+                margin-bottom: 30px;
+            }
+        }
+
+
+      
+        .footer-section {
+            background-color: #1d3557; 
+            color: white;
+            padding: 60px 0 20px 0;
+            font-size: 0.9rem;
+        }
+        .footer-section h5 {
+            color: white;
+            font-weight: bold;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .footer-section h5::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #fd7e14; 
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .footer-section ul li a:hover {
+            color: #fd7e14; 
+        }
+        .footer-section .contact-info p {
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: flex-start;
+        }
+        .footer-section .contact-info i {
+            margin-right: 10px;
+            color: #fd7e14; 
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+        }
+
+        
+        @media (max-width: 767.98px) {
+            .footer-section .col-md-3 {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .footer-section h5::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .footer-section .contact-info p {
+                justify-content: center;
+            }
+            .footer-section .contact-info i {
+                margin-right: 5px;
+            }
+        }
